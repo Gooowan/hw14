@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
         case 'PUT':
             if (urlParts[1] === 'users' && urlParts.length === 3) {
                 userFunctions.updateUser(req, res, urlParts[2]);
-                // curl -X PUT -H "Content-Type: application/json" -d '{"firstName":"Volodymyr"}' http://localhost:3000/users/1
+                // curl -X PUT -H "Content-Type: application/json" -d '{"firstName":"Volodymyr", "lastName":"Klitchko"}' http://localhost:3000/users/1
             }
             break;
 

@@ -17,7 +17,10 @@ function getByUserID(req, res, id) {
 }
 
 function updateUser(req, res, id, newData) {
-    const userIndex = data.findIndex(u => u.id === id);
+    const userIndex = data.find(u => u.id === id);
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end(userIndex);
+
     if (userIndex !== -1) {
         let [field, value] = newData.split('/');
         data[userIndex][field] = value;
